@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, target;
+
+    // Size of the array
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    // Array allocation
+    int* nums = new int[n];
+
+    // Elements of the array
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; ++i) {
+        cin >> nums[i];
+    }
+
+    // Target value
+    cout << "Enter the target value: ";
+    cin >> target;
+
+    for (int i = 0; i < n; ++i) {
+
+        for (int j = i + 1; j < n; ++j) {
+
+            if (nums[i] + nums[j] == target) {
+                cout << "[" << i << ", " << j << "]" << endl;
+
+            }
+        }
+    }
+
+    cout << "No solution exists." << endl;
+
+    return 0;
+}
